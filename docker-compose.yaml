@@ -4,13 +4,13 @@ services:
     ports:
       - "5173:5173"
     networks:
-      - mern-net
+      - mern
   backend:
     build: ./mern/backend
     ports:
       - "5050:5050"
     networks:
-      - mern-net
+      - mern
     depends_on:
       - mongo
   mongo:
@@ -18,7 +18,7 @@ services:
     ports:
       - "27017:27017"
     networks:
-      - mern-net
+      - mern
     volumes:
       - mongo-data:/data/db
 networks:
